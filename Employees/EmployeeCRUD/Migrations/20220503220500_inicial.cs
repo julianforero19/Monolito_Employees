@@ -57,7 +57,9 @@ namespace EmployeeCRUD.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Designation = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecordCreation = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    RecordCreation = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RecordUpdateOn = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Estate = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

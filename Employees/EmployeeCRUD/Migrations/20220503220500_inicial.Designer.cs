@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeCRUD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220426225557_inicial")]
+    [Migration("20220503220500_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,11 +40,17 @@ namespace EmployeeCRUD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Estate")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("RecordCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("RecordUpdateOn")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
